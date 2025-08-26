@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Karthik D - Portfolio</title>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    crossorigin="anonymous"
+  />
+  <style>
+    /* Base Styles */
+    * {margin:0; padding:0; box-sizing:border-box; font-family:'Poppins',sans-serif;}
+    body {line-height:1.6; background:#f1f1f1; color:#333;}
+    a {text-decoration:none; color:inherit;}
+    h1,h2,h3 {margin-bottom:15px;}
+
+    /* Colors */
+    :root {
+      --primary:#00adb5;
+      --secondary:#393e46;
+      --highlight:#ffd369;
+      --light:#ffffff;
+      --dark:#222831;
+    }
+
+    /* Navbar */
+    nav {
+      display:flex; justify-content:space-between; align-items:center;
+      padding:15px 5%; background:var(--secondary); color:var(--light);
+      position:sticky; top:0; z-index:1000;
+    }
+    nav .left h1 {color:var(--primary);}
+    nav .right a {margin-left:20px; font-weight:500; transition:0.3s;}
+    nav .right a:hover {color:var(--highlight);}
+
+    /* About Section */
+    .about {
+      display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between;
+      padding:60px 5%; background:linear-gradient(135deg, #f1f1f1 0%, #e0f7fa 100%);
+    }
+    .about .text {flex:1; min-width:300px; margin-right:40px;}
+    .about .text h2 {font-size:2rem; color:var(--primary);}
+    .about .my-self a {margin-right:20px; font-weight:bold; color:var(--secondary);}
+    .about .my-self a:hover {color:var(--primary);}
+    .about .profile-img img {
+      width:250px; height:250px; border-radius:50%;
+      border:4px solid var(--primary); object-fit:cover;
+      transition: transform 0.3s;
+    }
+    .about .profile-img img:hover {transform:scale(1.05);}
+
+    /* Skills Section */
+    .skills {padding:60px 5%; text-align:center; background:#ffffff;}
+    .skills h1 {color:var(--primary); margin-bottom:30px;}
+    .skills-container {
+      display:grid; grid-template-columns:repeat(auto-fit,minmax(120px,1fr));
+      gap:20px; margin-top:30px; justify-items:center;
+    }
+    .skill {
+      background:linear-gradient(135deg, #e0f7fa, #ffffff);
+      padding:20px; border-radius:12px; font-weight:bold;
+      color:var(--secondary); transition:transform 0.3s, box-shadow 0.3s;
+    }
+    .skill:hover {transform:translateY(-5px); box-shadow:0 4px 12px rgba(0,0,0,0.2);}
+
+    /* Education Section */
+    .education {padding:60px 5%; background:linear-gradient(135deg,#ffffff,#e0f7fa);}
+    .education h1 {color:var(--primary);}
+    .timeline-container {position:relative; margin-top:30px;}
+    .timeline-line {position:absolute; left:20px; top:0; bottom:0; width:4px; background:var(--primary);}
+    .timeline-item {margin-left:60px; margin-bottom:30px; position:relative;}
+    .timeline-dot {position:absolute; left:-12px; top:5px; width:20px; height:20px; background:var(--primary); border-radius:50%;}
+    .timeline-content {background:var(--light); padding:15px 20px; border-radius:8px; box-shadow:0 2px 6px rgba(0,0,0,0.15);}
+    .timeline-date {font-size:0.9rem; color:#666; margin-bottom:5px;}
+
+    /* Projects Section */
+    .project {padding:60px 5%; text-align:center; background:linear-gradient(135deg,#e0f7fa,#ffffff);}
+    .project h1 {color:var(--primary);}
+    .project-container {
+      display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:25px; margin-top:30px;
+    }
+    .projects {
+      background:linear-gradient(135deg,#ffffff,#ffd369); border-radius:12px; overflow:hidden;
+      transition:transform 0.3s, box-shadow 0.3s;
+    }
+    .projects img {width:100%; height:auto; object-fit:contain;}
+    .projects:hover {transform:translateY(-5px); box-shadow:0 4px 15px rgba(0,0,0,0.3);}
+    .content {padding:20px; text-align:left;}
+    .content h2 {color:var(--secondary);}
+    .content h3 {margin-top:10px; font-size:1rem; color:var(--secondary);}
+
+    /* Contact Section */
+    .contact {padding:60px 5%; text-align:center; background:linear-gradient(135deg,#ffffff,#e0f7fa);}
+    .contact h1 {color:var(--primary);}
+    .contact p {margin:10px 0; font-size:1.1rem;}
+    .contact a {color:var(--secondary); font-weight:bold; transition:0.3s;}
+    .contact a:hover {color:var(--primary);}
+
+    /* Footer */
+    footer {background:var(--secondary); color:var(--light); padding:15px; text-align:center;}
+
+    /* Responsive */
+    @media(max-width:768px){.about{flex-direction:column;text-align:center}.about .text{margin-right:0;margin-bottom:20px}}
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav>
+    <div class="left"><a href="#about"><h1>Karthik.D</h1></a></div>
+    <div class="right">
+      <a href="https://github.com/karthik636d" target="_blank"><i class="fa-brands fa-square-github"></i> Github</a>
+      <a href="https://www.linkedin.com/in/karthik-d-b10379290/" target="_blank"><i class="fa-brands fa-linkedin"></i> Linkedin</a>
+    </div>
+  </nav>
+
+  <!-- About -->
+  <section class="about" id="about">
+    <div class="text">
+      <h2>Hi, I'm Karthik.D</h2>
+      <p>
+        I am building my foundation in web development with HTML, CSS, JavaScript, and Python,
+        while also exploring frameworks and tools that help me design better digital experiences.
+        Alongside this, I am developing strong problem-solving and programming skills to pursue
+        my long-term goal of becoming an AI/ML Engineer.
+      </p>
+      <div class="my-self">
+        <a href="#skills"><i class="fa-solid fa-code"></i> Skills</a>
+        <a href="#education"><i class="fa-solid fa-user-graduate"></i> Education</a>
+        <a href="#projects"><i class="fa-solid fa-diagram-project"></i> Projects</a>
+        <a href="#contact"><i class="fa-solid fa-envelope"></i> Contact</a>
+      </div>
+    </div>
+    <div class="profile-img">
+      <img src="images/karthik.jpg" alt="Karthik D" />
+    </div>
+  </section>
+
+  <!-- Skills -->
+  <section class="skills" id="skills">
+    <h1>Skills</h1>
+    <div class="skills-container">
+      <div class="skill">HTML</div>
+      <div class="skill">CSS</div>
+      <div class="skill">JavaScript</div>
+      <div class="skill">Python</div>
+      <div class="skill">Java</div>
+    </div>
+  </section>
+
+  <!-- Education -->
+  <section class="education" id="education">
+    <h1>Education</h1>
+    <div class="timeline-container">
+      <div class="timeline-line"></div>
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <div class="timeline-date">2023 - 2027</div>
+          <h3>M Kumarasamy College of Engineering, Karur</h3>
+          <p>B.Tech in Information Technology</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <div class="timeline-date">2022 - 2023</div>
+          <h3>Chelammal Vidhyaashram CBSE School, Musiri</h3>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <div class="timeline-date">2020 - 2021</div>
+          <h3>Chelammal Vidhyaashram CBSE School, Musiri</h3>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section class="project" id="projects">
+    <h1>Projects</h1>
+    <div class="project-container">
+      <div class="projects">
+        <img src="images/smartfarming.png" alt="Smart Farming Project" />
+        <div class="content">
+          <h2>Smart Farming</h2>
+          <h3>My Role :</h3>
+          <span>Database Designer & Developer</span>
+          <h3>Description :</h3>
+          <span>
+            The Smart Farming using DBMS project improves agricultural practices through efficient data management using a relational database.
+          </span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="contact" id="contact">
+    <h1>Contact</h1>
+    <p><i class="fa-solid fa-envelope"></i> 
+       <a href="mailto:karthikdhanapal03@gmail.com">karthikdhanapal03@gmail.com</a>
+    </p>
+    <p><i class="fa-solid fa-phone"></i> 
+       <a href="tel:+916379722380">+91 6379722380</a>
+    </p>
+  </section>
+
+  <!-- Footer -->
+  <footer>© 2025 Karthik D | All Rights Reserved</footer>
+</body>
+</html>
